@@ -1,6 +1,6 @@
 name: sonar
-
-push:
+on:
+ push:
   branches:
   - main
 
