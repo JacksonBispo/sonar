@@ -4,7 +4,7 @@ on:
   branches:
   - main
 
-jjobs:
+jobs:
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
