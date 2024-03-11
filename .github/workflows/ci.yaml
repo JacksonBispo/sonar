@@ -6,12 +6,12 @@ on:
 
 jobs:
   check-application:
-    sonarcloud:
-      name: SonarCloud
-      runs-on: ubuntu-latest
-      steps:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
-         with:
+      - uses: actions/setup-node@v1
+        with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
 
  
