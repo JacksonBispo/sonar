@@ -7,12 +7,13 @@ on:
 jobs:
   check-application:
     sonarcloud:
-      name: SonarCloud
-      runs-on: ubuntu-latest
+    build:
+      runs-on: ubuntu-latestgit 
+
       steps:
       - uses: actions/checkout@v2
-         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+        with:
+            fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
