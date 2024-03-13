@@ -17,17 +17,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    build:
-      runs-on: ubuntu-latest
-      steps: 
-      - name: checkout repo
-        uses: actions/checkout@v3
-      - name: use node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.x'
-      - run: npm install
-      - run: npm run build
+
     test: 
       runs-on: ubuntu-latest
       steps: 
@@ -39,6 +29,3 @@ jobs:
             node-version: '18.x'
         - run: npm install
         - run: npm test
-
-
-        
