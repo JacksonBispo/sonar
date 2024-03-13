@@ -2,7 +2,7 @@ name: sonar
 on:
  push:
   branches:
-  - main
+  - develop
 
 jobs:
     sonarcloud:
@@ -32,7 +32,7 @@ jobs:
           node-version: '18.x'
       - run: npm install
       - run: npm run build
-      
+
     test: 
       needs: build
       runs-on: ubuntu-latest
