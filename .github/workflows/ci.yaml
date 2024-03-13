@@ -17,10 +17,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      - name: Install dependencies
-        run: npm install
-
     build:
       runs-on: ubuntu-latest
       steps: 
@@ -33,7 +29,6 @@ jobs:
       - run: npm install
       - run: npm run build
     test: 
-      needs: build
       runs-on: ubuntu-latest
       steps: 
         - name: checkout repo
